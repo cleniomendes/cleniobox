@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from '../../assets/logo.png';
 import api from '../../services/api';
-import {MdInsertDriveFile} from 'react-icons/md';
+import {MdFolder} from 'react-icons/md';
 
 export default class AllBoxes extends Component {
     state = { boxes: [] }
@@ -23,7 +23,7 @@ export default class AllBoxes extends Component {
                     {this.state.boxes && this.state.boxes.map(box => (
                      <li key={box._id}>
                         <a className="fileInfo">
-                            <MdInsertDriveFile size={24} color="#A5Cfff" />
+                            <MdFolder size={24} color="#A5Cfff" />
                             <strong>{box.title}</strong>
                         </a>                        
                     </li>
