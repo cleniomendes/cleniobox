@@ -39,5 +39,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/files', express.static(path.resolve(__dirname, '..', 'tmp')));
 //caminho do arquivo de rotas
 app.use(require('./routes'));
+const PORT = process.env.PORT || 3001;
+const HOST = '127.0.0.1';
+server.listen(PORT, HOST);
 
-server.listen(process.env.PORT || 3001);
+console.log(`Running on 
+http://${HOST}:${PORT}`);
