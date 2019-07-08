@@ -11,10 +11,11 @@ node {
     }
     stage('Deploy'){
       if(env.BRANCH_NAME == 'master'){
-		cd 'backend'
-        sh 'docker build -t backend --no-cache .'		
-		sh 'docker tag backend registry.heroku.com/backend-cleniobox/web'
-		sh 'docker push registry.heroku.com/backend-cleniobox/web'
+		dir ('backend') { 
+			sh 'docker build -t backend --no-cache .'		
+			sh 'docker tag backend registry.heroku.com/backend-cleniobox/web'
+			sh 'docker push registry.heroku.com/backend-cleniobox/web'
+		}		        
       }
     }
   }
